@@ -1,0 +1,26 @@
+# data and run outputs are never committed
+work/
+*.bam
+*.bai
+*.wig
+!pipeline/reference/*.wig
+*.fa
+*.fasta*
+# user-supplied target BED and generated probe references
+pipeline/reference/*.bed
+pipeline/reference/target_sequences_flank*
+# ichorCNA output
+solution_optimal_*/
+*.params.txt
+*.cna.seg
+*.seg.txt
+*.pdf
+# tooling
+__pycache__/
+*.pyc
+.Rhistory
+.RData
+.DS_Store
+desktop.ini
+*.bak
+*.orig

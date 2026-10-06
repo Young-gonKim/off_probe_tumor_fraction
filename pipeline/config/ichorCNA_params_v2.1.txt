@@ -1,0 +1,54 @@
+Exact ichorCNA argument list used for the published analysis.
+Passed to scripts/runIchorCNA_v060.R, which is a thin CLI wrapper around
+ichorCNA::run_ichorCNA() at v0.6.0 (GavinHaLab, commit be6d5999).
+
+  --id            <sample>_non_amplified_flank50
+  --WIG           <sample>_non_amplified_flank50.wig
+  --gcWig         gc_hg19_1000kb.wig
+  --mapWig        map_hg19_1000kb.wig
+  --normalPanel   pon_v1_17_non_amplified_flank50.rds_median.rds   (v1)
+                  pon_v2_non_amplified_flank50.rds_median.rds      (v2)
+  --centromere    centromere_hg19.txt
+  --repTimeWig    None
+  --normal        "c(0.5,0.6,0.7,0.8,0.9,0.95)"
+  --ploidy        "c(2,3)"
+  --maxCN         5
+  --scStates      "c(1,3)"
+  --txnE          0.9999999
+  --txnStrength   1e7
+  --normal2IgnoreSC 0.9
+  --includeHOMD   False
+  --estimateNormal True
+  --estimatePloidy True
+  --estimateScPrevalence True
+  --maxFracGenomeSubclone 0.5
+  --maxFracCNASubclone    0.7
+  --minMapScore   0.9
+  --fracReadsInChrYForMale 0.001
+  --normalizeMaleX True
+  --chrs          "paste0('chr', c(1:22, \"X\"))"
+  --chrTrain      "paste0('chr', c(1:22))"
+  --genomeBuild   hg19
+  --genomeStyle   NCBI
+  --plotFileType  pdf
+  --plotYLim      "c(-2,2)"
+
+No deviation from the configuration distributed with ichorCNA. Every argument
+above is either a run_ichorCNA() default or a value distributed with the package.
+
+Revised 2026-09-11 (v2.1). --normal previously carried the extra starting point
+0.99. It was removed: across 11 flank sizes and 60 development samples the two
+grids give Spearman correlations against lcWGS identical to four decimals at
+flanks 20-100, and nine of the ten sample cases are unchanged to five decimals.
+The grid only seeds the EM restarts; the likelihood picks the winner.
+
+Revised 2026-09-10. --txnE, --txnStrength and --normal2IgnoreSC are now the
+defaults of ichorCNA::run_ichorCNA() / getDefaultParameters() themselves. The
+values used previously (0.9999 / 1e4, and normal2IgnoreSC left at the wrapper's
+1.0) came from ichorCNA's snakemake config, giving a transition prior a thousand
+times weaker than the package intends and leaving subclonal states active on the
+high-normal EM restarts. On ten healthy-donor blanks that raised the limit of
+blank to 4.28%, above the 3% clinical threshold; restored, it is 1.74%.
+These are package defaults, not values fitted to this data.
+
+The lcWGS reference arm is run WITHOUT --normalPanel (ichorCNA default for that assay).
