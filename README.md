@@ -121,7 +121,7 @@ If you use this code, please cite the paper above and ichorCNA
 
 ## License
 
-MIT — see [`LICENSE`](LICENSE).
+MIT — see [`LICENSE`](LICENSE) and [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
 
 Exception: `pipeline/reference/gc_hg19_1000kb.wig` and `map_hg19_1000kb.wig` are copied
 unchanged from ichorCNA v0.6.0 and remain under GPL-3.0
