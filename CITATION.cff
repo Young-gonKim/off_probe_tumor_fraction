@@ -1,18 +1,10 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the article below."
+message: "If you use this software, please cite it as below."
 title: "Off-probe tumour fraction from TSO500 targeted sequencing"
 version: "2.1"
 license: MIT
 authors:
-  - family-names: "TBD"
-    given-names: "TBD"
-repository-code: "https://github.com/TBD/TBD"
-preferred-citation:
-  type: article
-  title: "Tumour fraction from the off-target coverage of a targeted sequencing panel"
-  authors:
-    - family-names: "TBD"
-      given-names: "TBD"
-  journal: "TBD"
-  year: 2026
-  doi: "TBD"
+  - family-names: "Kim"
+    given-names: "Young-gon"
+    email: "younggonnkim@gmail.com"
+repository-code: "https://github.com/Young-gonKim/off_probe_tumor_fraction"

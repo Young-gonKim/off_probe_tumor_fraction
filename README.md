@@ -1,10 +1,5 @@
 # Off-probe tumour fraction from TSO500 targeted sequencing
 
-Code accompanying:
-
-> **Tumour fraction from the off-target coverage of a targeted sequencing panel.**
-> _Authors_. _Journal_ (_year_). doi: _TBD_
-
 The pipeline estimates circulating tumour fraction (TF) from TruSight Oncology 500
 (TSO500) hybrid-capture data with no additional sequencing. It removes probe-derived
 reads at the **read level** (each read is re-aligned to the capture-target sequences
@@ -39,7 +34,7 @@ conda env create -f environment.yml
 conda activate offprobe-tf
 ```
 
-Then install ichorCNA v0.6.0 (GPL-3; not redistributed here) into that environment:
+Then install ichorCNA v0.6.0 (not redistributed here) into that environment:
 
 ```bash
 git clone https://github.com/GavinHaLab/ichorCNA.git
@@ -116,8 +111,8 @@ table from the UCSC hg19 gap table (all included in `pipeline/reference/`).
 
 ## Citation
 
-If you use this code, please cite the paper above and ichorCNA
-(Adalsteinsson _et al._, _Nat Commun_ 2017; 8:1324). See [`CITATION.cff`](CITATION.cff).
+If you use this code, please cite this repository ([`CITATION.cff`](CITATION.cff)) and ichorCNA
+(Adalsteinsson _et al._, _Nat Commun_ 2017; 8:1324).
 
 ## License
 
